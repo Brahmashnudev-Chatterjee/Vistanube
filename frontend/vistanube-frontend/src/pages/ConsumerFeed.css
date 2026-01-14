@@ -1,0 +1,146 @@
+/* frontend/src/pages/ConsumerFeed.css */
+
+/* ================================
+   FULL PAGE BACKGROUND (MATCHES CREATOR DASHBOARD)
+================================ */
+.consumer-feed-page {
+  min-height: 100vh;
+  padding-top: 80px; /* Space for the fixed header */
+  
+  background: linear-gradient(
+    135deg,
+    #5fd3c6 0%,
+    #6ec7e0 35%,
+    #4f7ac7 70%,
+    #3a2c7d 100%
+  );
+
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: white; /* Default text color */
+}
+
+/* ================================
+   FIXED HEADER (Navigation & Search)
+================================ */
+.feed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays on top */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 30px;
+
+  /* Glassmorphism styling */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feed-header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Search Bar --- */
+.search-bar-container {
+    flex-grow: 1; /* Allows it to take up available space */
+    max-width: 500px;
+    margin: 0 30px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 18px;
+    border-radius: 25px; /* Rounded pill style */
+    border: none;
+    
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    color: #1e1e1e;
+    outline: none;
+    
+    transition: box-shadow 0.2s ease;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 0 2px rgba(0, 170, 255, 0.5); /* Blue focus ring */
+}
+
+/* --- Logout Button (Matches Creator Navbar Style) --- */
+.feed-header .logout-btn {
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: none;
+
+    background: rgba(255, 80, 80, 0.25);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.feed-header .logout-btn:hover {
+    background: rgba(255, 80, 80, 0.45);
+    box-shadow: 0 4px 10px rgba(255, 80, 80, 0.4);
+}
+
+
+/* ================================
+   FEED CONTAINER & GRID
+================================ */
+.feed-container {
+  max-width: 1200px;
+  margin: 20px auto 40px; /* Center content */
+  padding: 0 20px;
+}
+
+.posts-grid {
+    display: grid;
+    /* Responsive layout: 1 column on mobile, 2 on desktop */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 30px;
+}
+
+/* --- Messages --- */
+.loading-message, .no-posts {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .feed-header {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+    .feed-header .logo, .feed-header .logout-btn {
+        margin-bottom: 10px;
+    }
+    .search-bar-container {
+        order: 3; /* Push search to the bottom line */
+        width: 100%;
+        margin: 5px 0 0 0;
+    }
+    .posts-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}

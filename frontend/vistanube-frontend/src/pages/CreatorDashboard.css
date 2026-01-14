@@ -1,0 +1,157 @@
+/* ================================
+   FULL PAGE BACKGROUND
+================================ */
+.creator-page {
+  min-height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center; /* center content horizontally */
+  align-items: flex-start;
+
+  padding: 32px;
+
+  background: linear-gradient(
+    135deg,
+    #5fd3c6 0%,
+    #6ec7e0 35%,
+    #4f7ac7 70%,
+    #3a2c7d 100%
+  );
+
+  font-family: "Segoe UI", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================================
+   CENTERED DASHBOARD CONTAINER
+================================ */
+.creator-container {
+  width: 100%;
+  max-width: 1100px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+
+/* ================================
+   GLASS CARD (POSTS + CREATE)
+================================ */
+.glass-section {
+  padding: 28px;
+  max-width: 720px;
+
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08);
+
+  color: #1e1e1e;
+}
+
+
+/* ================================
+   TEXT
+================================ */
+.glass-section h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.glass-section p {
+  opacity: 0.65;
+  font-size: 14px;
+}
+
+/* ================================
+   CREATE POST FORM
+================================ */
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+/* INPUTS */
+.create-post-form input,
+.create-post-form textarea,
+.create-post-form select {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: none;
+
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  outline: none;
+
+  transition: box-shadow 0.2s ease;
+}
+
+.create-post-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* FOCUS EFFECT */
+.create-post-form input:focus,
+.create-post-form textarea:focus,
+.create-post-form select:focus {
+  box-shadow: 0 0 0 2px rgba(0, 140, 255, 0.35);
+}
+
+/* FILE INPUT */
+.create-post-form input[type="file"] {
+  background: transparent;
+  padding: 6px 0;
+}
+
+/* ================================
+   SUBMIT BUTTON
+================================ */
+.create-post-form button {
+  margin-top: 14px;
+  padding: 14px;
+
+  border-radius: 18px;
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    #00aaff,
+    #0077ff
+  );
+
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.create-post-form button:hover {
+  box-shadow: 0 14px 32px rgba(0, 170, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .creator-page {
+    padding: 24px 16px;
+  }
+
+  .glass-section {
+    padding: 22px;
+  }
+}

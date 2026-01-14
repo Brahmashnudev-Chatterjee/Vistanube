@@ -1,0 +1,136 @@
+/* frontend/src/components/CreatorPostCard.css */
+
+/* --- Card Container (MATCHES .glass-section) --- */
+.creator-post-card {
+    /* Set a reasonable maximum width for the card */
+    max-width: 100%; /* Will take full width of parent column/container */
+    margin: 1.5rem 0; /* Vertical spacing between posts */
+    padding: 20px;
+
+    /* Glassmorphism styling, slightly darker than main section for contrast */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    /* Use dark text to contrast with the light background */
+    color: #1e1e1e;
+}
+
+/* --- Post Details --- */
+.post-details h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.post-details p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.post-details small {
+    display: block;
+    font-size: 12px;
+    color: #4f4f4f;
+    margin-bottom: 15px;
+}
+
+/* --- Media Container (THE FIX FOR OVERFLOW) --- */
+.post-media-container {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 8px; /* Match the rounded corners of the card */
+    overflow: hidden; /* Important for cleaner display */
+}
+
+.post-media-container img,
+.post-media-container video {
+    /* CRITICAL FIX: Ensures media scales down to fit the container */
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+/* --- Action Buttons --- */
+.post-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.post-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 12px; /* Match Navbar buttons */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* Edit Button (Use the dashboard's primary blue accent) */
+.edit-btn {
+    background: linear-gradient(135deg, #00aaff, #0077ff); /* Matches form submit button */
+    color: white;
+}
+.edit-btn:hover {
+    box-shadow: 0 4px 10px rgba(0, 170, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Delete Button (Use the soft red from the Navbar logout button) */
+.delete-btn {
+    background: rgba(255, 80, 80, 0.25);
+    color: #d9534f;
+}
+.delete-btn:hover {
+    background: rgba(255, 80, 80, 0.45);
+    color: white;
+}
+
+/* --- Edit Mode Styles --- */
+.editing-mode .edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.editing-mode input[type="text"],
+.editing-mode textarea {
+    /* Use light-background input style from .create-post-form */
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1e1e1e;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+}
+
+.editing-mode input:focus,
+.editing-mode textarea:focus {
+    box-shadow: 0 0 0 2px rgba(0, 140, 255, 0.35); /* Matches form focus effect */
+}
+
+.editing-mode .edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.save-btn {
+    background: #5cb85c; /* Green for Save */
+    color: white;
+}
+.cancel-btn {
+    background: #999; /* Grey for Cancel */
+    color: white;
+}

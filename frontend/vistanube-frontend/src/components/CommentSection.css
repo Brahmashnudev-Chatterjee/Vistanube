@@ -1,0 +1,106 @@
+/* frontend/src/components/CommentSection.css (FINAL UPDATE) */
+
+/* ... (Comment Form styles remain the same) ... */
+.comment-section-container {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15); /* Separator line */
+}
+
+/* --- Comment Form --- */
+.comment-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.comment-form textarea {
+    flex-grow: 1;
+    padding: 10px;
+    min-height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    resize: none;
+    font-size: 14px;
+    color: #1e1e1e;
+}
+.comment-form button {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background: #0077ff; 
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.comment-form button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* --- Comments List & Items --- */
+.comment-status {
+    font-size: 14px;
+    opacity: 0.7;
+    margin: 10px 0;
+}
+
+.comment-item {
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    /* 🔑 FIX: Remove position: relative to simplify layout */
+}
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align header items to the top */
+    margin-bottom: 5px;
+}
+
+/* 🔑 NEW: Container for Timestamp and Delete Button */
+.comment-meta {
+    display: flex; 
+    gap: 10px; /* Space between timestamp and delete button */
+    align-items: center;
+}
+
+.commenter-username {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4f7ac7;
+}
+
+.comment-timestamp {
+    font-size: 12px;
+    color: #666;
+    /* Ensure no vertical margin */
+    margin: 0;
+}
+
+.comment-text {
+    font-size: 14px;
+    margin: 5px 0 0;
+    color: #333;
+}
+
+.delete-comment-btn {
+    /* 🔑 FIX: Remove absolute positioning */
+    position: static; 
+    padding: 3px 8px;
+    background: none;
+    border: none;
+    color: #d9534f;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    line-height: 1; /* Ensure text alignment is clean */
+}
+.delete-comment-btn:hover {
+    opacity: 1;
+}

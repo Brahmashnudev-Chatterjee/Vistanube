@@ -1,0 +1,130 @@
+/* frontend/src/components/ConsumerPostCard.css */
+
+/* --- Card Container (Glassmorphism) --- */
+.consumer-post-card {
+    padding: 25px;
+    
+    /* Glassmorphism styling, slightly lighter than main background for a pop effect */
+    background: rgba(255, 255, 255, 0.35); 
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Use dark text to contrast with the light glass background */
+    color: #1e1e1e;
+    transition: transform 0.3s ease;
+}
+
+.consumer-post-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Header Info --- */
+.post-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.creator-username {
+    font-size: 1rem;
+    color: #0077ff; /* Blue accent color for creator name */
+}
+
+.timestamp {
+    font-size: 0.85rem;
+    color: #4f4f4f;
+}
+
+/* --- Media --- */
+.post-media-content {
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.post-media-content .post-image,
+.post-media-content .post-video {
+    /* Critical fix for media overflow */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Details --- */
+.post-details h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.post-details p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* --- Interactions (Counts and Buttons) --- */
+.post-interactions {
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 15px;
+}
+
+.reaction-counts {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.count-item {
+    font-weight: 600;
+    color: #1e1e1e;
+}
+
+.reaction-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.reaction-buttons button {
+    flex: 1; /* Make buttons take equal space */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+/* --- Button Styling (Glassmorphism + Blue Accent) --- */
+.like-btn {
+    background-color: rgba(0, 170, 255, 0.1);
+    color: #0077ff;
+}
+.like-btn:hover {
+    background-color: rgba(0, 170, 255, 0.3);
+}
+
+.dislike-btn {
+    background-color: rgba(255, 80, 80, 0.1);
+    color: #d9534f;
+}
+.dislike-btn:hover {
+    background-color: rgba(255, 80, 80, 0.3);
+}
+
+.comment-btn {
+    background-color: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+}
+.comment-btn:hover {
+    background-color: rgba(108, 117, 125, 0.3);
+}
